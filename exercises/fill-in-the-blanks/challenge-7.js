@@ -33,6 +33,7 @@ const challenge7 = (str) => new Promise(
     return {
       pass: !hasVowel(str)
         && !hasNumber(str)
+        && err instanceof Error
         && err.message === 'bad status',
       value: str,
       err

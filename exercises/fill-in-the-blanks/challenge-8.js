@@ -31,6 +31,7 @@ const challenge8 = (str) => new Promise(
   }))
   .catch((err) => ({
     pass: (hasVowel(str) || hasNumber(str))
+      && err instanceof Error
       && err.message === _,
     value: _,
     err

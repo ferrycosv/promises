@@ -33,8 +33,9 @@ const challenge9 = (str) => new Promise(
     val
   }))
   .catch((err) => ({
-    pass: (hasVowel(str) && err.message === 'too many vowels')
-      || (hasNumber(str) && err.message === 'too many numbers'),
+    pass: err instanceof Error
+      && ((hasVowel(str) && err.message === 'too many vowels')
+        || (hasNumber(str) && err.message === 'too many numbers')),
     value: str,
     err
   }));

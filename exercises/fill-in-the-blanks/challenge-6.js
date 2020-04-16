@@ -23,7 +23,8 @@ const challenge6 = (str) => new Promise(
   })
   .catch((err) => {
     return {
-      pass: _.name === 'Error'
+      pass: err instanceof Error
+        && _.name === 'Error'
         && _.message === 'no vowels',
       value: str,
       err,

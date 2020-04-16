@@ -17,16 +17,24 @@ const executor1 = (resolve, reject) => {
 const resolvedPromise = new Promise(executor1);
 
 const executor2 = (resolve, reject) => {
-  reject('settled: rejected');
+  try {
+    reject('settled: rejected');
+  } catch (err) {
+    console.error(err);
+  };
 };
 const rejectedPromise = new Promise(executor2);
 
 const executor3 = (resolve, reject) => {
   const rando = Math.random();
   if (rando > 0.5) {
-    resolve('greater than 0.5');
+    resolve(rando + ': greater than 0.5');
   } else {
-    reject('less than 0.5');
+    try {
+      reject(rando + ': less than 0.5');
+    } catch (err) {
+      console.error(err);
+    };
   };
 };
 const uncertainPromise = new Promise(executor3);
