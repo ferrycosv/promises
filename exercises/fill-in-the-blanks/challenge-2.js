@@ -7,16 +7,16 @@ const challenge2 = (array) => {
   return new Promise(
     (res, rej) => {
       setTimeout(() => {
-        if (_) {
-          _(array);
+        if (allEven) {
+          res(array);
         } else {
-          _(array);
+          rej(array);
         }
       }, 0)
     })
     .then(
-      (resolvedVal) => resolvedVal._(entry => entry % 2 === 0),
-      (rejectedVal) => !rejectedVal._(entry => entry % 2 === 0)
+      (resolvedVal) => resolvedVal.every(entry => entry % 2 === 0),
+      (rejectedVal) => !rejectedVal.every(entry => entry % 2 === 0)
     )
     .then(assertion => {
       return { array, allEven, pass: assertion };

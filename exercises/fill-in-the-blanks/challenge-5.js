@@ -6,10 +6,10 @@ const hasVowel = (str) => !Array.from(str)
 const challenge5 = (str) => new Promise(
   (res, rej) => {
     setTimeout(() => {
-      if (_) {
-        _({ status: _, value: str });
+      if (hasVowel(str)) {
+        res({ status: 10, value: str });
       } else {
-        _({ status: _, value: str });
+        rej({ status: 20, value: str });
       }
     }, 0)
   })

@@ -8,9 +8,9 @@ const challenge4 = (array) => {
     (res, rej) => {
       setTimeout(() => {
         if (allEven) {
-          _(_);
+          rej(array);
         } else {
-          _(_);
+          res(array);
         }
       }, 0)
     })

@@ -4,15 +4,15 @@ const challenge1 = (value) => new Promise(
   (res, rej) => {
     setTimeout(() => {
       if (value < 30) {
-        _(value);
+        res(value);
       } else {
-        _(value);
+        rej(value);
       };
     }, 0)
   })
   .then(
-    (resolvedVal) => resolvedVal < _,
-    (rejectedVal) => rejectedVal _ _
+    (resolvedVal) => resolvedVal < 30,
+    (rejectedVal) => rejectedVal >= 30
   )
   .then(assertion => {
     return { value, pass: assertion };

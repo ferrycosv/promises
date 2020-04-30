@@ -18,14 +18,14 @@ const challenge7 = (str) => new Promise(
     }, 0)
   })
   .then((response) => {
-    if (response._ === _) {
-      response.pass = response._ === 10
-        && _(response.value);
-    } else if (response._ === _) {
-      response.pass = response._ === 20
-        && _(response.value);
-    } else if (_) {
-      throw new _(_);
+    if (response.status === 10) {
+      response.pass = response.status === 10
+        && hasVowel(response.value);
+    } else if (response.status === 20) {
+      response.pass = response.status === 20
+        && hasNumber(response.value);
+    } else if (response.status === 30) {
+      throw new Error('bad status');
     };
     return response;
   })
